@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaCortex.Full.Development", "MetaCortex.Full.Development\MetaCortex.Full.Development.csproj", "{33344EF1-4184-47BA-A8F4-B4F471A7BBE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Full.Development", "MetaCortex.Full.Development\MetaCortex.Full.Development.csproj", "{33344EF1-4184-47BA-A8F4-B4F471A7BBE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{3B19706E-77DE-411C-8922-A673EEAEECA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.csproj", "{3B19706E-77DE-411C-8922-A673EEAEECA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MicroServices", "MicroServices", "{B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Orders.API", "MetaCortex.Orders\MetaCortex.Orders.API\MetaCortex.Orders.API.csproj", "{A2300CF8-21F3-417C-B51A-935B64DE3016}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Orders.DataAcess", "MetaCortex.Orders\MetaCortex.Orders.DataAcess\MetaCortex.Orders.DataAcess.csproj", "{C2BA4652-97FD-4A36-A5B0-66925A067394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +27,22 @@ Global
 		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2300CF8-21F3-417C-B51A-935B64DE3016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2300CF8-21F3-417C-B51A-935B64DE3016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2300CF8-21F3-417C-B51A-935B64DE3016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2300CF8-21F3-417C-B51A-935B64DE3016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B19706E-77DE-411C-8922-A673EEAEECA0} = {B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04C722C2-7225-43A5-82E7-6BD9E94454C7}
 	EndGlobalSection
 EndGlobal

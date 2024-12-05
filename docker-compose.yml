@@ -1,0 +1,122 @@
+version '3.8' services:
+  #Ocelot API Gateway
+  ocelot-frontend:
+    build:
+      context: ./MetaCortex.Full.Development/Gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - metacortex-payments
+      - metacortex-orders
+      - metacortex-customers
+      - metacortex-products
+    networks:
+      - app-network
+
+  # Payment
+  metacortex-payments:
+    build:
+      context: ./MetaCortex.Payments/MetaCortex.Payments.API
+    ports:
+      - "5001:80"
+    environment:
+      - MongoDbSettings__Host=metacortex-payments-db
+      - MongoDbSettings__Port=27017
+      - MongoDbSettings__DatabaseName=MetaCortex-Payments
+      - MongoDbSettings__CollectionName=Payment
+    depends_on:
+      - metacortex-payments-db
+    networks:
+      - app-network
+    
+  metacortex-payments-db:
+    image: mongo:6.0
+    container_name: mongodb-container
+    ports:
+    - "1433:1433"
+    networks:
+    - app-network
+    volumes:
+    - mongodb_data:/data/db
+
+  # Orders
+  metacortex-orders:
+    build:
+      context: ./MetaCortex.Orders/MetaCortex.Orders.API
+    ports:
+      - "5002:80"
+    environment:
+      - MongoDbSettings__Host=metacortex-orders-db
+      - MongoDbSettings__Port=27017
+      - MongoDbSettings__DatabaseName=MetaCortex-Orders
+      - MongoDbSettings__CollectionName=OrderCollection
+    depends_on:
+      - metacortex-orders-db
+    networks:
+      - app-network
+    
+  metacortex-orders-db:
+    image: mongo:6.0
+    container_name: mongodb-container
+    ports:
+    - "1434:1433"
+    networks:
+    - app-network
+    volumes:
+    - mongodb_data:/data/db
+
+  # Customers
+  metacortex-customers:
+    build:
+      context: ./MetaCortex.Customers/MetaCortex.Customers.API
+    ports:
+      - "5003:80"
+    environment:
+      - MongoDbSettings__Host=metacortex-customers-db
+      - MongoDbSettings__Port=27017
+      - MongoDbSettings__DatabaseName=MetaCortex-Customers
+      - MongoDbSettings__CollectionName=CustomerCollection
+    depends_on:
+      - metacortex-customers-db
+    networks:
+      - app-network
+    
+  metacortex-customers-db:
+    image: mongo:6.0
+    container_name: mongodb-container
+    ports:
+    - "1435:1433"
+    networks:
+    - app-network
+    volumes:
+    - mongodb_data:/data/db
+
+  # Products
+  metacortex-products:
+    build:
+      context: ./MetaCortex.Products/MetaCortex.Products.API
+    ports:
+      - "5004:80"
+    environment:
+      - MongoDbSettings__Host=metacortex-products-db
+      - MongoDbSettings__Port=27017
+      - MongoDbSettings__DatabaseName=MetaCortex-Products
+      - MongoDbSettings__CollectionName=ProductCollection
+    depends_on:
+      - metacortex-products-db
+    networks:
+      - app-network
+    
+  metacortex-products-db:
+    image: mongo:6.0
+    container_name: mongodb-container
+    ports:
+    - "1436:1433"
+    networks:
+    - app-network
+    volumes:
+    - mongodb_data:/data/db
+
+networks:
+  app-network:
+    driver: bridge
