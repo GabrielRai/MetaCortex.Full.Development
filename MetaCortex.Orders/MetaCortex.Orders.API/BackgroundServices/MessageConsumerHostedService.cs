@@ -21,13 +21,13 @@ namespace MetaCortex.Orders.API.BackgroundServices
         }
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var queueNames = new string[] { "order-to-payment", "payment-to-order" };
+            var queueNames = new string[] { "customer-to-order", "payment-to-order" };
             Console.WriteLine("Message Consumer Hosted Service is running.");
             foreach (var queueName in queueNames)
             {
                 await _messageConsumerService.ReadMessageAsync(queueName, async (message) =>
                 {
-                    if(queueName == "order-to-payment")
+                    if(queueName == "customer-to-order")
                     {
                         Console.WriteLine("Order to Payment");
                         await _objectConverterService.CheckVIP(message);

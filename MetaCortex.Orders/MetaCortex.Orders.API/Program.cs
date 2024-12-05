@@ -23,15 +23,13 @@ builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
 builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 
 
-builder.Services.AddSingleton(sp => new RabbitMqConfiguration()
-{
-    HostName = "rabbitmq-service",
-    UserName = "guest",
-    Password = "guest"
-});
+builder.Services.Configure<RabbitMqConfiguration>(builder.Configuration.GetSection("RabbitMqSettings"));
+builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<RabbitMqConfiguration>>().Value);
+builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
+
+
 
 builder.Services.AddSingleton<ObjectConverterService>();
-builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 builder.Services.AddSingleton<IMessageProducerService, MessageProducerService>();
 builder.Services.AddSingleton<IMessageConsumerService, MessageConsumerService>();
 
