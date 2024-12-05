@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "metacortex-products",
-          "Port": 5001
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/products",
@@ -18,7 +18,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "metacortex-orders",
-          "Port": 5004
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/orders",
@@ -30,7 +30,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "metacortex-customers",
-          "Port": 5002
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/customers",
@@ -42,7 +42,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "metacortex-payments",
-          "Port": 5003
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/payments",
