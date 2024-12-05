@@ -26,6 +26,7 @@ version '3.8' services:
       - MongoDbSettings__CollectionName=Payment
     depends_on:
       - metacortex-payments-db
+      - rabbitmq-service
     networks:
       - app-network
     
@@ -52,6 +53,7 @@ version '3.8' services:
       - MongoDbSettings__CollectionName=OrderCollection
     depends_on:
       - metacortex-orders-db
+      - rabbitmq-service
     networks:
       - app-network
     
@@ -78,6 +80,7 @@ version '3.8' services:
       - MongoDbSettings__CollectionName=CustomerCollection
     depends_on:
       - metacortex-customers-db
+      - rabbitmq-service
     networks:
       - app-network
     
@@ -104,6 +107,7 @@ version '3.8' services:
       - MongoDbSettings__CollectionName=ProductCollection
     depends_on:
       - metacortex-products-db
+      - rabbitmq-service
     networks:
       - app-network
     
@@ -116,6 +120,18 @@ version '3.8' services:
     - app-network
     volumes:
     - mongodb_data:/data/db
+
+  rabbitmq-service:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-container
+    ports:
+      - "5672:5672" # RabbitMQ connection
+      - "15672:15672" # Management console
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - app-network
 
 networks:
   app-network:
