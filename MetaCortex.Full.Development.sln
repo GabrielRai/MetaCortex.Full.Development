@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Orders.API", "Me
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Orders.DataAcess", "MetaCortex.Orders\MetaCortex.Orders.DataAcess\MetaCortex.Orders.DataAcess.csproj", "{C2BA4652-97FD-4A36-A5B0-66925A067394}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Products.API", "MetaCortex.Products\Products.API\MetaCortex.Products.API.csproj", "{46E8166F-EC3B-4A06-8A4A-B3DC9999E227}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Products.DataAccess", "MetaCortex.Products\MetaCortex.Products.DataAccess\MetaCortex.Products.DataAccess.csproj", "{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2BA4652-97FD-4A36-A5B0-66925A067394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E8166F-EC3B-4A06-8A4A-B3DC9999E227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E8166F-EC3B-4A06-8A4A-B3DC9999E227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E8166F-EC3B-4A06-8A4A-B3DC9999E227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E8166F-EC3B-4A06-8A4A-B3DC9999E227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
