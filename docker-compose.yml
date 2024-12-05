@@ -1,4 +1,4 @@
-version '3.8' services:
+services:
   #Ocelot API Gateway
   ocelot-frontend:
     build:
@@ -16,7 +16,7 @@ version '3.8' services:
   # Payment
   metacortex-payments:
     build:
-      context: ./MetaCortex.Payments/MetaCortex.Payments.API
+      context: ./MetaCortex.Payments
     ports:
       - "5001:80"
     environment:
@@ -38,12 +38,12 @@ version '3.8' services:
     networks:
     - app-network
     volumes:
-    - mongodb_data:/data/db
+    - mongodb_data:/data/payments-db
 
   # Orders
   metacortex-orders:
     build:
-      context: ./MetaCortex.Orders/MetaCortex.Orders.API
+      context: ./MetaCortex.Orders
     ports:
       - "5002:80"
     environment:
@@ -65,12 +65,12 @@ version '3.8' services:
     networks:
     - app-network
     volumes:
-    - mongodb_data:/data/db
+    - mongodb_data:/data/orders-db
 
   # Customers
   metacortex-customers:
     build:
-      context: ./MetaCortex.Customers/MetaCortex.Customers.API
+      context: ./MetaCortex.Customers
     ports:
       - "5003:80"
     environment:
@@ -92,12 +92,12 @@ version '3.8' services:
     networks:
     - app-network
     volumes:
-    - mongodb_data:/data/db
+    - mongodb_data:/data/customer-db
 
   # Products
   metacortex-products:
     build:
-      context: ./MetaCortex.Products/MetaCortex.Products.API
+      context: ./MetaCortex.Products
     ports:
       - "5004:80"
     environment:
@@ -119,7 +119,7 @@ version '3.8' services:
     networks:
     - app-network
     volumes:
-    - mongodb_data:/data/db
+    - mongodb_data:/data/products-db
 
   rabbitmq-service:
     image: rabbitmq:3-management
@@ -136,3 +136,6 @@ version '3.8' services:
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mongodb_data:
