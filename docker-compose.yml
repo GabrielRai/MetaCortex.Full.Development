@@ -5,6 +5,8 @@ services:
       context: ./MetaCortex.Gateway
     ports:
       - "5000:5000"
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
     depends_on:
       - metacortex-payments
       - metacortex-orders

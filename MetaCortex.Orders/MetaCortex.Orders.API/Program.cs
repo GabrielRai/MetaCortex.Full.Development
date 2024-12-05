@@ -25,7 +25,7 @@ builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 
 builder.Services.AddSingleton(sp => new RabbitMqConfiguration()
 {
-    HostName = "localhost",
+    HostName = "rabbitmq-service",
     UserName = "guest",
     Password = "guest"
 });

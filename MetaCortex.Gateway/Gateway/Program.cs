@@ -5,6 +5,10 @@ builder.Configuration.AddJsonFile("Ocelot.json", optional: false, reloadOnChange
 
 builder.Services.AddOcelot();
 
+builder.Logging.AddConsole();
+builder.Logging.SetMinimumLevel(LogLevel.Debug);
+
+
 var app = builder.Build();
 
 

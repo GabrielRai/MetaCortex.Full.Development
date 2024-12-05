@@ -36,11 +36,12 @@ builder.Services.AddSingleton(sp =>
     };
 });
 
+builder.Services.AddSingleton<ICheckCustomerStatusService, CheckCustomerStatusService>();
+
 builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 builder.Services.AddSingleton<IMessageProducerService, MessageProducerService>();
 builder.Services.AddSingleton<IMessageConsumerService, MessageConsumerService>();
 
-builder.Services.AddSingleton<CheckCustomerStatusService>();
 
 builder.Services.AddHostedService<MessageConsumerHostedService>();
 
