@@ -12,10 +12,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Gateway/Gateway.csproj", "Gateway/"]
-RUN dotnet restore "./Gateway/Gateway.csproj"
+COPY ["MicroServices/Gateway.csproj", "MicroServices/Gateway/"]
+RUN dotnet restore ".MicroServices/Gateway.csproj"
 COPY . .
-WORKDIR "/src/Gateway"
+WORKDIR "/src/MicroServices/Gateway"
 RUN dotnet build "./Gateway.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
