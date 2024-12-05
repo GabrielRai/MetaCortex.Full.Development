@@ -2,7 +2,7 @@ services:
   #Ocelot API Gateway
   ocelot-frontend:
     build:
-      context: ./MetaCortex.Full.Development/Gateway
+      context: ./MetaCortex.Gateway
     ports:
       - "5000:5000"
     depends_on:
@@ -32,7 +32,7 @@ services:
     
   metacortex-payments-db:
     image: mongo:6.0
-    container_name: mongodb-container
+    container_name: mongodb-payments-container
     ports:
     - "1433:1433"
     networks:
@@ -59,7 +59,7 @@ services:
     
   metacortex-orders-db:
     image: mongo:6.0
-    container_name: mongodb-container
+    container_name: mongodb-orders-container
     ports:
     - "1434:1433"
     networks:
@@ -86,7 +86,7 @@ services:
     
   metacortex-customers-db:
     image: mongo:6.0
-    container_name: mongodb-container
+    container_name: mongodb-customers-container
     ports:
     - "1435:1433"
     networks:
@@ -113,7 +113,7 @@ services:
     
   metacortex-products-db:
     image: mongo:6.0
-    container_name: mongodb-container
+    container_name: mongodb-products-container
     ports:
     - "1436:1433"
     networks:

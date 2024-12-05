@@ -5,8 +5,6 @@ VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Full.Development", "MetaCortex.Full.Development\MetaCortex.Full.Development.csproj", "{33344EF1-4184-47BA-A8F4-B4F471A7BBE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.csproj", "{3B19706E-77DE-411C-8922-A673EEAEECA0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MicroServices", "MicroServices", "{B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Customers.API", "MetaCortex.Customers\MetaCortex.Customers.API\MetaCortex.Customers.API.csproj", "{5EF38FFF-2044-4BBA-A30B-14019BDBD807}"
@@ -21,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Products.API", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaCortex.Products.DataAccess", "MetaCortex.Products\MetaCortex.Products.DataAccess\MetaCortex.Products.DataAccess.csproj", "{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "MetaCortex.Gateway\Gateway\Gateway.csproj", "{7D96E337-5EAC-43BB-9FE9-EA06407626BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,10 +31,6 @@ Global
 		{33344EF1-4184-47BA-A8F4-B4F471A7BBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33344EF1-4184-47BA-A8F4-B4F471A7BBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33344EF1-4184-47BA-A8F4-B4F471A7BBE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B19706E-77DE-411C-8922-A673EEAEECA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EF38FFF-2044-4BBA-A30B-14019BDBD807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5EF38FFF-2044-4BBA-A30B-14019BDBD807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EF38FFF-2044-4BBA-A30B-14019BDBD807}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,13 +55,19 @@ Global
 		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF4C76B4-ABD0-47DF-9A9F-0EDDEA21D16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D96E337-5EAC-43BB-9FE9-EA06407626BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D96E337-5EAC-43BB-9FE9-EA06407626BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D96E337-5EAC-43BB-9FE9-EA06407626BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D96E337-5EAC-43BB-9FE9-EA06407626BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3B19706E-77DE-411C-8922-A673EEAEECA0} = {B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}
 		{5EF38FFF-2044-4BBA-A30B-14019BDBD807} = {B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}
+		{A2300CF8-21F3-417C-B51A-935B64DE3016} = {B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}
+		{46E8166F-EC3B-4A06-8A4A-B3DC9999E227} = {B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}
+		{7D96E337-5EAC-43BB-9FE9-EA06407626BE} = {B4A4A2E4-68D8-4B85-ADFE-706B4C90A70C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04C722C2-7225-43A5-82E7-6BD9E94454C7}

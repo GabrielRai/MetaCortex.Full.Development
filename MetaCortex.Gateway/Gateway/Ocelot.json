@@ -35,20 +35,19 @@
       ],
       "UpstreamPathTemplate": "/customers",
       "UpstreamHttpMethod": [ "Get", "Post", "Update", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/payments",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/payments",
+      "UpstreamHttpMethod": [ "Get", "Post", "Update", "Delete" ]
     }
-  ],
-  {
-    "DownstreamPathTemplate": "/api/payments",
-    "DownstreamScheme": "http",
-    "DownstreamHostAndPorts": [
-      {
-        "Host": "localhost",
-        "Port": 5003
-      }
-    ],
-    "UpstreamPathTemplate": "/payments",
-    "UpstreamHttpMethod": [ "Get", "Post", "Update", "Delete" ]
-  },
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:8000"
